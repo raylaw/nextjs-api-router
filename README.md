@@ -1,6 +1,11 @@
 # NextJS API Router
 
-A simple Next.js api router, inspired by the Laravel and AdonisJS
+A simple Next.js api router, inspired by Laravel and AdonisJS
+
+![issues](https://img.shields.io/github/issues/raylaw/nextjs-api-router)
+![forks](https://img.shields.io/github/forks/raylaw/nextjs-api-router)
+![satrs](https://img.shields.io/github/stars/raylaw/nextjs-api-router)
+![license](https://img.shields.io/github/license/raylaw/nextjs-api-router)
 
 ## Installation
 
@@ -180,4 +185,3 @@ Router.get(pattern, async ({ res, req }) => {
 ## To-do
 
 - Middleware support
-- Example App
