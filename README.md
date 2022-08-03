@@ -21,7 +21,7 @@ yarn add @raylaw/nextjs-api-router
 
 ### Basic use
 
-First create a [dynamic API routes](https://nextjs.org/docs/api-routes/dynamic-api-routes), e.g. `/pages/api/v1/[...slug'].ts`
+First create a [dynamic API routes](https://nextjs.org/docs/api-routes/dynamic-api-routes), e.g. `/pages/api/v1/[...slug].ts`
 
 ```ts
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -92,7 +92,7 @@ A group is created by passing a closure to the Router.group method.
 
 ```ts
 const Router = new NxRouter();
-Router.group('user', ({ req, res }) => {
+Router.group('user', () => {
   // GET /api/v1/user/profile/
   Router.get('profile', ({ req, res }) => {
     return res.stats(200).json({ url: '/api/v1/user/profile/' });
