@@ -1,6 +1,6 @@
 # NextJS API Router
 
-A simple Next.js api router, inspired by Laravel and AdonisJS
+A simple Next.js api router, inspired by the Laravel and AdonisJS
 
 ## Installation
 
