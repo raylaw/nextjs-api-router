@@ -1,6 +1,6 @@
 {
   "name": "@raylaw/nextjs-api-router",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple Nextjs API router",
   "source": "src/index.ts",
   "main": "dist/main.js",
@@ -33,5 +33,13 @@
     "commitizen": {
       "path": "./changelog.config.js"
     }
-  }
+  },
+  "keywords": [
+    "next",
+    "nextjs",
+    "route",
+    "router",
+    "api",
+    "middleware"
+  ]
 }
