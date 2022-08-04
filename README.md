@@ -31,7 +31,7 @@ const Router = new NxRouter();
 
 Router.get('hello/.*', ({ res, req }) => {
   const { slug } = req.query;
-  const [message] = slug;
+  const [, message] = slug ?? [];
   return res.stats(200).json({ hello: message });
 });
 
