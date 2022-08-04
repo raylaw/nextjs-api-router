@@ -182,6 +182,36 @@ Router.get(pattern, async ({ res, req }) => {
 
 ```
 
+### Fallback route
+
+By default, if no route is matched, it will return a 400 response, for example
+
+URL `/api/v1/ooops/`
+
+RESPONSE `400`
+
+```ts
+{
+  "error":"no-route-handler"
+  "url":"/api/v1/ooops/"
+}
+```
+
+To override this behaviour, you can create a fallback route at the end. You can use the same method to create a fallback route for a group.
+
+```ts
+const Router = new NxRouter();
+
+...
+...
+...
+
+Router.any('.*', ({ req, res }) => {
+  return res.stats(400).json({ error: 'no-api-route-handler', rootPath: '/api/v1/' });
+});
+
+```
+
 ## To-do
 
 - Middleware support
