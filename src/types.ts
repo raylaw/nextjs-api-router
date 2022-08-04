@@ -5,7 +5,7 @@ export type NextApiContext<T = unknown> = {
   res: NextApiResponse<T>;
 };
 
-export type NxRouteHandlder = (ctx: NextApiContext) => void;
+export type NxRouteHandler = (ctx: NextApiContext) => void;
 
 export type NxRouteMiddlware = (params?: NextApiContext) => NextApiContext | undefined;
 

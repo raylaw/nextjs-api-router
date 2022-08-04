@@ -130,26 +130,26 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 ```ts
 class NxRouter {
-  get: (pattern: string, handler: NxRouteHandlder) => void;
+  get: (pattern: string, handler: NxRouteHandler) => void;
 
-  post: (pattern: string, handler: NxRouteHandlder) => void;
+  post: (pattern: string, handler: NxRouteHandler) => void;
 
-  put: (pattern: string, handler: NxRouteHandlder) => void;
+  put: (pattern: string, handler: NxRouteHandler) => void;
 
-  patch: (pattern: string, handler: NxRouteHandlder) => void;
+  patch: (pattern: string, handler: NxRouteHandler) => void;
 
-  delete: (pattern: string, handler: NxRouteHandlder) => void;
+  delete: (pattern: string, handler: NxRouteHandler) => void;
 
-  any: (pattern: string, handler: NxRouteHandlder) => void;
+  any: (pattern: string, handler: NxRouteHandler) => void;
 
-  route: (pattern: string, methods: HttpMethod[], handler: NxRouteHandlder) => void;
+  route: (pattern: string, methods: HttpMethod[], handler: NxRouteHandler) => void;
 
   group: (pattern: string, cb: () => void) => void;
 
   handle: (prefix: string, ctx: NextApiContext) => void;
 }
 
-type NxRouteHandlder = (ctx: NextApiContext) => void;
+type NxRouteHandler = (ctx: NextApiContext) => void;
 
 type NextApiContext<T = unknown> = {
   req: NextApiRequest;
@@ -159,10 +159,10 @@ type NextApiContext<T = unknown> = {
 
 ### Pattern & Handler
 
-|         | type            | description                                                                               |
-| ------- | --------------- | ----------------------------------------------------------------------------------------- |
-| pattern | string          | Any string pattern accepted by the `new RegExp(pattern)`, for example: 'user/\\\d+/posts' |
-| handler | NxRouteHandlder | Can be an aysnc function                                                                  |
+|         | type           | description                                                                               |
+| ------- | -------------- | ----------------------------------------------------------------------------------------- |
+| pattern | string         | Any string pattern accepted by the `new RegExp(pattern)`, for example: 'user/\\\d+/posts' |
+| handler | NxRouteHandler | Can be an aysnc function                                                                  |
 
 ```ts
 

@@ -1,16 +1,16 @@
 import { error } from './config';
-import { HttpMethod, Methods, NextApiContext, NxRouteHandlder } from './types';
+import { HttpMethod, Methods, NextApiContext, NxRouteHandler } from './types';
 
 export class NxRouter {
   routes: Array<{
     pattern: string;
     methods: Methods;
-    handler: NxRouteHandlder;
+    handler: NxRouteHandler;
   }> = [];
 
   rootPath: string[] = [];
 
-  private addRoute(pattern: string, methods: Methods, handler: NxRouteHandlder) {
+  private addRoute(pattern: string, methods: Methods, handler: NxRouteHandler) {
     this.routes.push({
       pattern: [...this.rootPath, pattern].join('/'),
       handler,
@@ -31,7 +31,7 @@ export class NxRouter {
     res.status(400).json({ error: error['no-route-handler'], url });
   }
 
-  route(pattern: string, methods: HttpMethod[], handler: NxRouteHandlder) {
+  route(pattern: string, methods: HttpMethod[], handler: NxRouteHandler) {
     const hash = Object.fromEntries(methods.map((v, i) => [v, true]));
     this.addRoute(pattern, hash, handler);
   }
@@ -42,27 +42,27 @@ export class NxRouter {
     this.rootPath.splice(-1);
   }
 
-  patch(pattern: string, handler: NxRouteHandlder) {
+  patch(pattern: string, handler: NxRouteHandler) {
     this.addRoute(pattern, { PATCH: true }, handler);
   }
 
-  delete(pattern: string, handler: NxRouteHandlder) {
+  delete(pattern: string, handler: NxRouteHandler) {
     this.addRoute(pattern, { DELETE: true }, handler);
   }
 
-  put(pattern: string, handler: NxRouteHandlder) {
+  put(pattern: string, handler: NxRouteHandler) {
     this.addRoute(pattern, { PUT: true }, handler);
   }
 
-  get(pattern: string, handler: NxRouteHandlder) {
+  get(pattern: string, handler: NxRouteHandler) {
     this.addRoute(pattern, { GET: true }, handler);
   }
 
-  post(pattern: string, handler: NxRouteHandlder) {
+  post(pattern: string, handler: NxRouteHandler) {
     this.addRoute(pattern, { POST: true }, handler);
   }
 
-  any(pattern: string, handler: NxRouteHandlder) {
+  any(pattern: string, handler: NxRouteHandler) {
     this.addRoute(
       pattern,
       {
