@@ -1,6 +1,6 @@
 {
   "name": "@raylaw/nextjs-api-router",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple Nextjs API router",
   "source": "src/index.ts",
   "main": "dist/main.js",
